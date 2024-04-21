@@ -228,7 +228,7 @@ def trainer(train_loader, valid_loader, model, config, device):
         loss_record = []
         for x, y in valid_loader:
             x, y = x.to(device), y.to(device)
-            with torch.no_grad():
+            with torch.no_grad(): #disable graditent calculation
                 pred = model(x)
                 loss = criterion(pred, y)
 
